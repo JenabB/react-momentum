@@ -29,10 +29,13 @@ const User = () => {
 
   return (
     <div className="text-white text-center">
-      <h2>
-        Good {condition},
-        <span className="cursor-pointer" onDoubleClick={handleDoubleClick}>
-          {name}
+      <h2 className="text-2xl">
+        Good {condition}
+        <span
+          className="cursor-pointer text-4xl font-bold"
+          onDoubleClick={handleDoubleClick}
+        >
+          , {name}
         </span>
       </h2>
     </div>
