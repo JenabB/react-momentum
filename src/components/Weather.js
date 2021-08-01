@@ -45,7 +45,6 @@ const Weather = () => {
       }
     };
   }, [url]);
-  console.log(weather);
 
   return (
     <div className="text-center text-white pt-24">

@@ -5,6 +5,7 @@ import Time from "./components/Time";
 import User from "./components/User";
 import Weather from "./components/Weather";
 import Todo from "./components/Todo";
+import Quote from "./components/Quote";
 
 const App = () => {
   const [condition, setCondition] = useState(1420440);
@@ -35,6 +36,7 @@ const App = () => {
     >
       <Weather />
       <Time />
+      <Quote />
       <User />
       <Todo />
     </div>
