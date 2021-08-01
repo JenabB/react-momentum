@@ -34,7 +34,7 @@ const Weather = () => {
         })
         .catch((error) => console.log(error));
 
-      intervalId = setTimeout(fetchData, 10000);
+      intervalId = setTimeout(fetchData, 3600000);
     };
 
     fetchData();
