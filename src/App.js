@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React, { useState, useEffect } from "react";
+import getImage from "./components/getImage";
+import Time from "./components/Time";
+import User from "./components/User";
+const App = () => {
+  const [image, setImage] = useState([]);
+  useEffect(() => {
+    getImage().then((data) => setImage(data.src.landscape));
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className="h-screen"
+      style={{ backgroundImage: `url(${image})`, backgroundSize: "cover" }}
+    >
+      <Time />
+      <User />
     </div>
   );
-}
+};
 
 export default App;
