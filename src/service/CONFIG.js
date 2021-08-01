@@ -1,5 +1,0 @@
-const CONFIG = {
-  API_KEY: "563492ad6f91700001000001f4437833d1ce4ef58f80595aa44d5417",
-};
-
-export default CONFIG;

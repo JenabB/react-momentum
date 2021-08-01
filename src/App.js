@@ -4,6 +4,7 @@ import { createClient } from "pexels";
 import Time from "./components/Time";
 import User from "./components/User";
 import Weather from "./components/Weather";
+import Todo from "./components/Todo";
 
 const App = () => {
   const [condition, setCondition] = useState(1420440);
@@ -35,6 +36,7 @@ const App = () => {
       <Weather />
       <Time />
       <User />
+      <Todo />
     </div>
   );
 };

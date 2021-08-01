@@ -48,7 +48,7 @@ const Weather = () => {
   console.log(weather);
 
   return (
-    <div className="text-center text-white pt-32">
+    <div className="text-center text-white pt-24">
       <div className="flex items-center justify-center text-white">
         <img src={icon} alt="weather" />
         {weather.main ? <h1>{weather.main.temp} &#176;C</h1> : <h1>Loading</h1>}
