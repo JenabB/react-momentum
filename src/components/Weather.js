@@ -12,6 +12,7 @@ const Weather = () => {
   const API_KEY_WEATHER = "a3347e3e736d7f4ffaa7a91b0638ddcc";
 
   useEffect(() => {
+    //get your location using geolocation
     navigator.geolocation.getCurrentPosition(function (position) {
       setLatitude(position.coords.latitude);
       setLongitude(position.coords.longitude);
@@ -24,7 +25,8 @@ const Weather = () => {
     let intervalId;
 
     const fetchData = async () => {
-      fetch(url)
+      //update weather every 1 hour
+      await fetch(url)
         .then((response) => response.json())
         .then((data) => {
           setWeather(data);

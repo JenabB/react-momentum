@@ -15,17 +15,18 @@ const User = () => {
     setName(newName);
   };
 
+  // eslint-disable-next-line
   useEffect(() => {
-    if (new Date().getHours() <= 19 && new Date().getHours() >= 15) {
+    if (new Date().getHours() >= 15 && new Date().getHours() <= 19) {
       setCondition("Evening");
-    } else if (new Date().getHours() > 21 || new Date().getHours() <= 4) {
+    } else if (new Date().getHours() > 19 && new Date().getHours() <= 4) {
       setCondition("Night");
     } else if (new Date().getHours() > 4 && new Date().getHours() < 12) {
       setCondition("Morning");
-    } else if (new Date().getHours() < 15 && new Date().getHours() >= 12) {
+    } else if (new Date().getHours() >= 12 && new Date().getHours() < 15) {
       setCondition("Afternoon");
     }
-  }, []);
+  });
 
   return (
     <div className="text-white text-center">

@@ -6,6 +6,7 @@ const Time = () => {
 
   useEffect(() => {
     setInterval(() => {
+      //update time every 1s
       setTime(moment().format("HH:mm"));
     }, 1000);
   });

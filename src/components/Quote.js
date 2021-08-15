@@ -3,13 +3,14 @@ import React, { useState, useEffect } from "react";
 const Quote = () => {
   const [quote, setQuote] = useState([]);
 
-  const url = "https://api.quotable.io/random";
+  const url = "https://api.quotable.io/random"; //random photo url
 
   useEffect(() => {
     let intervalId;
 
     const fetchData = async () => {
-      fetch(url)
+      //using interval to change quote every 1 hour
+      await fetch(url)
         .then((response) => response.json())
         .then((data) => {
           setQuote(data);
@@ -27,8 +28,6 @@ const Quote = () => {
       }
     };
   }, [url]);
-
-  console.log(quote);
 
   return (
     <div className="text-white text-center">
