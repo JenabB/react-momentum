@@ -15,18 +15,42 @@ const User = () => {
     setName(newName);
   };
 
-  // eslint-disable-next-line
   useEffect(() => {
-    if (new Date().getHours() >= 15 && new Date().getHours() <= 19) {
-      setCondition("Evening");
-    } else if (new Date().getHours() > 19 && new Date().getHours() <= 4) {
-      setCondition("Night");
-    } else if (new Date().getHours() > 4 && new Date().getHours() < 12) {
-      setCondition("Morning");
-    } else if (new Date().getHours() >= 12 && new Date().getHours() < 15) {
-      setCondition("Afternoon");
-    }
-  });
+    let intervalId;
+
+    const getDay = () => {
+      //afternoon
+      if (new Date().getHours() >= 15 && new Date().getHours() <= 19) {
+        setCondition("Afternoon");
+      }
+      //night
+      else if (new Date().getHours() > 19 && new Date().getHours() <= 4) {
+        setCondition("Night");
+      }
+      //dawn
+      else if (new Date().getHours() > 4 && new Date().getHours() < 6) {
+        setCondition("Dawn");
+      }
+      //Morning
+      else if (new Date().getHours() >= 6 && new Date().getHours() < 9) {
+        setCondition("Morning");
+      }
+      //tengah hari
+      else if (new Date().getHours() >= 9 && new Date().getHours() < 15) {
+        setCondition("Afternoon");
+      }
+
+      intervalId = setTimeout(getDay, 3600000);
+    };
+
+    getDay();
+
+    return () => {
+      if (intervalId) {
+        clearTimeout(intervalId);
+      }
+    };
+  }, [condition]);
 
   return (
     <div className="text-white text-center">
