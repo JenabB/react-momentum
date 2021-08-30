@@ -37,7 +37,7 @@ const User = () => {
       }
       //tengah hari
       else if (new Date().getHours() >= 9 && new Date().getHours() < 15) {
-        setCondition("Afternoon");
+        setCondition("Daylight");
       }
 
       intervalId = setTimeout(getDay, 3600000);
